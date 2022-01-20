@@ -31,7 +31,7 @@ const cooldown = new Set();
 const cdtime = 5;
 const prefix = "z!"
 const col = "#2C2F33"
-client.login("Nzk2ODc2OTk2NzQ2NDEyMTAy.X_eTiQ.zMAxB7X433jubPeBW-NKoVdGx6E")
+client.login("NzkwNTgzMjg5NDU0MTMzMjc4.X-CuEA.tPMtwGitJC--uW2UzG7lKl_bJxQ")
 client.on("ready", () => {
   console.log("ALLAH AKBAR");
   console.log("♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔");
