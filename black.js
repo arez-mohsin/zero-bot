@@ -1214,7 +1214,7 @@ var Black = new Discord.MessageEmbed()
 .addField('Server Name',`${message.guild.name}`)
 
 .addField('Boost Count',` ${message.guild.premiumSubscriptionCount}`)
-.setColor("RANDOM")
+.setColor(col)
 message.channel.send(Black);
 }); 
 client.on('message', message => { //Black jack
@@ -1232,9 +1232,9 @@ client.on("message", message => {
     if (message.content.startsWith(prefix + "rules")) {
       if (!message.member.hasPermission("MANAGE_GUILD")) return;
      const blackjack = new Discord.MessageEmbed() 
-         .setColor("BLACK")
+         .setColor(col)
          .setTitle("RULES")
-         .setImage("https://media.discordapp.net/attachments/644265220449107968/646324616536784897/image0-16.png")
+         .setImage("https://media.discordapp.net/attachments/932921711970623548/933827010357264444/rules.gif")
          .setFooter("RULES")
          .setDescription(`
 
@@ -1277,7 +1277,7 @@ client.on("message", message => {
   .addField("Name User", user)
   .addField("Nickname New", nick)
   .addField("Moderation", message.author.tag)
-  .setColor("RANDOM")
+  .setColor(col)
   message.channel.send(blackj)
   }
   });
@@ -1310,7 +1310,7 @@ if (msg.content.startsWith(prefix + "year")){
     
     let embed = new Discord.MessageEmbed()
     .setAuthor("Next Year!", msg.author.displayAvatarURL())
-    .setColor("RANDOM")
+    .setColor(col)
     .setDescription(`There are **${days} days**, **${hours} hours**, **${minutes} minutes** and **${seconds} seconds** until **${next.getFullYear()}**!`)
     .setImage("")
     .setFooter(`Or, in short, ${moment.duration(next - now).humanize()}.`)
@@ -1344,8 +1344,8 @@ client.on("message", message => {
         .addField("**Time Join Server**", message.member.joinedAt.toLocaleString())    
         .addField("**Bot**", `${heg.bot}`, true)
         .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
-        .setColor("RANDOM")     
-        .setFooter("BLACK SESTAM");
+        .setColor(col)     
+        .setFooter("");
   
     message.channel.send(embed);
   }
@@ -1364,9 +1364,9 @@ client.on("message", message => {
     }
     const embed = new Discord.MessageEmbed()
       .addField("Requested by:", "<@" + message.author.id + ">")
-      .setColor("BLACK")
+      .setColor(col)
       .setImage(`${client.avatarURL}`)
-      .setFooter("BLACK BOT");
+      .setFooter("");
     message.channel.send(embed);
   }
 });
@@ -1379,7 +1379,7 @@ client.on("message", message => {
       4
     );
     var embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor(col)
       .setTitle(":tools: Permissions")
       .addField("Your Permissions:", perms);
     message.channel.send({ embed: embed });
@@ -1416,7 +1416,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Role', `${newrole}`)
 .addField('Server', `${message.guild.name}`)
 .addField('Requested By', `${message.author}`)
-.setColor("RANDOM")
+.setColor(col)
 .setFooter(`${client.user.username}`)
 .setTimestamp()
 message.channel.send(embed)
@@ -1563,7 +1563,7 @@ client.on("message", msg => {
   if (msg.content == prefix + "guild") {
     let embed = new Discord.MessageEmbed()
       .setThumbnail(msg.guild.iconURL())
-      .setColor("RANDOM")
+      .setColor(col)
       .addField("Year📆", msg.guild.createdAt.getFullYear())
       .addField("Hour📆", msg.guild.createdAt.getHours())
       .addField("Day📆", msg.guild.createdAt.getDay())
@@ -1625,8 +1625,8 @@ client.on('message', message => {
                 var Date15= new Discord.MessageEmbed()
                 .setThumbnail("https://i.imgur.com/ib3n4Hq.png") 
                 .setTitle( "TIME AND DATE")
-                .setColor('RANDOM')
-                .setFooter("BLACK BOT")
+                .setColor(col)
+                .setFooter("")
                 .setFooter(message.author.username, message.author.avatarURL())
                  .addField('Time',
                 "『"+ hours2 + ":" + minutes +":"+ seconds  + "』") 
@@ -1715,7 +1715,7 @@ client.on("message", message => {
       .map(channels => `${channels.name}, `)
       .join(" ");
     const embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor(col)
       .setAuthor(message.author.username, message.author.avatarURL())
       .setTitle("**INFO ROOMS**")
       .addField(`${message.guild.name}`, `**Rooms:white_check_mark:**`)
@@ -1779,7 +1779,7 @@ client.on("message", message => {
           .addField("Guild name", message.guild.name)
           .addField("Channel", `${message.channel.name}`)
           .addField("By", `<@${message.author.id}>`, true)
-          .setColor("RANDOM");
+          .setColor(col);
         return message.channel.send(embed);
       });
   }
@@ -1798,7 +1798,7 @@ client.on("message", message => {
           .addField("Guild name", message.guild.name)
           .addField("Channel", message.channel.name)
           .addField("By", `<@${message.author.id}>`, true)
-          .setColor("RANDOM");
+          .setColor(col);
         return message.channel.send(embed);
       });
   }
@@ -1817,7 +1817,7 @@ client.on("message", message => {
       .addField("Guild name", message.guild.name)
       .addField("Channel", message.channel.name)
       .addField("Moderation", `<@${message.author.id}>`, true)
-      .setColor("RANDOM");
+      .setColor(col);
     message.channel.send(embed).then(bj => {
       bj.react("🔒");
     });
@@ -1837,7 +1837,7 @@ client.on("message", message => {
       .addField("Guild name", message.guild.name)
       .addField("Channel", message.channel.name)
       .addField("Moderation", `<@${message.author.id}>`, true)
-      .setColor("RANDOM");
+      .setColor(col);
     message.channel.send(embed).then(bj => {
       bj.react("🔓");
     });
@@ -2207,15 +2207,15 @@ client.on("message", message => {
         .setThumbnail(message.guild.iconURL())
         .setTitle("Erorr :x:")
         .setDescription("**SEND NUMBER**")
-        .setFooter("Protection black system")
-        .setColor("9e1c36");
+        .setFooter("Protection")
+        .setColor(col);
 
       {
         let black2 = new Discord.MessageEmbed()
           .setThumbnail(message.guild.iconURL())
           .setTitle("Error :x:")
           .setDescription("**JUST SEND NUMBER*")
-          .setColor("9e1c36");
+          .setColor(col);
  
         if (message.content.startsWith(prefix + "anti ban")) {
           if (!num) return message.channel.send(black);
@@ -2230,8 +2230,8 @@ client.on("message", message => {
               )
               .addField("By", message.author.tag)
               .addField("Server", message.guild.name)
-              .setFooter("Protection black system")
-              .setColor("RED");
+              .setFooter("Protection")
+              .setColor(col);
             message.channel.send(banLimit1);
           }
         }
@@ -2247,8 +2247,8 @@ client.on("message", message => {
             )
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(embedddd);
         }
 if (message.content.startsWith(prefix + "anti roleD")) {
@@ -2263,8 +2263,8 @@ if (message.content.startsWith(prefix + "anti roleD")) {
             )
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(embeddddddddd);
         }
         if (message.content.startsWith(prefix + "anti roleC")) {
@@ -2278,8 +2278,8 @@ if (message.content.startsWith(prefix + "anti roleD")) {
             )
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(embeed);
         }
         if (message.content.startsWith(prefix + "anti channelD")) {
@@ -2294,8 +2294,8 @@ if (message.content.startsWith(prefix + "anti roleD")) {
             )
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(embeeed);
         }
 if (message.content.startsWith(prefix + "anti channelC")) {
@@ -2310,8 +2310,8 @@ if (message.content.startsWith(prefix + "anti channelC")) {
             )
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(embd);
         }
         if (message.content.startsWith(prefix + "anti time")) {
@@ -2324,8 +2324,8 @@ if (message.content.startsWith(prefix + "anti channelC")) {
             .setDescription(`Changed to : **${config[message.guild.id].time}**`)
             .addField("By", message.author.tag)
             .addField("Server", message.guild.name)
-            .setFooter("Protection black system")
-            .setColor("RED");
+            .setFooter("Protection")
+            .setColor(col);
           message.channel.send(emb);
         }
       }
