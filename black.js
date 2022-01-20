@@ -31,7 +31,7 @@ const cooldown = new Set();
 const cdtime = 5;
 const prefix = "z!"
 const col = "#2C2F33"
-client.login("")
+client.login("Nzk2ODc2OTk2NzQ2NDEyMTAy.X_eTiQ.zMAxB7X433jubPeBW-NKoVdGx6E")
 client.on("ready", () => {
   console.log("ALLAH AKBAR");
   console.log("♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔");
@@ -52,15 +52,13 @@ client.on("message", message => {
     if (!message.channel.guild) return;
     if (!message.member.hasPermission("MANAGE_GUILD"))
       return message.channel.send(
-        "**Sorry But You Dont Have Permission** `MANAGE_GUILD`"
-      );
+        "**Sorry But You Dont Have Permission** `MANAGE_GUILD`");
     if (!room) return message.channel.send("**Please Type The Name Channel**");
     if (!channel) return message.channel.send("**Cant Find This Channel**");
     let embed = new Discord.MessageEmbed()
       .setAuthor(message.author.username, message.author.avatarURL())
       .setThumbnail(message.author.avatarURL())
-      .setTitle("**✅Done Check The Welcomer Code Has Been Setup**")
-      .addField("Channel:", `${room}`)
+      .setTitle("**✅Done Check The Welcomer Code Has Been Setup**")      .addField("Channel:", `${room}`)
       .addField("Server", `${message.guild.name}`)
       .addField("Requested By:", `${message.author}`)
       .setColor(col)
@@ -3402,14 +3400,14 @@ client.on("message", message => {
     let botembed = new Discord.MessageEmbed()
       .setThumbnail(message.author.avatarURL())
       .setAuthor(`${client.user.username} Information`)
-      .setColor("RANDOM")
+      .setColor(col)
       .addField("Bot Name", ` \`${client.user.username}\``)
       .addField("Created On", ` \`${client.user.createdAt}\``)
       .addField("Servers", `\`${client.guilds.cache.size}\``)
       .addField("Users", `\`${client.users.cache.size}\``)
       .addField("Channels", `\`${client.channels.cache.size}\``)
-      .addField("Devs Bot", `\` AREZ#1012 \``)
-      .addField("Version", `\` Version 12.4.0\``)
+      .addField("Devs Bot", `\` Mr.𝗕𝗹𝗮𝗰𝗸𝗝𝗮𝗰𝗸#6687,AREZ#1012\``)
+      .addField("Version", `\` Version 14.0.1\``)
       .addField("Ping Bot", `\`${msg}ms.\``)
       .addField("Api Bot", `\`${api}ms.\``)
       .setTimestamp();
@@ -3477,7 +3475,7 @@ client.on('message', message => {
    var args = message.content.split(" ").slice(1).join(" ");
    if(!args) return message.reply("**Please Type Message For say Embed**")
    const embed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
+        .setColor(col)
         .setThumbnail(message.author.avatarURL())
         .setAuthor(message.author.username,message.author.avatarURL())
         .setDescription(args)
@@ -3508,7 +3506,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel', `${room}`)
 .addField('Server', `${message.guild.name}`)
 .addField('Requested By', `${message.author}`)
-.setColor("RANDOM")
+.setColor(col)
 .setFooter(`${client.user.username}`)
 .setTimestamp()
 message.channel.send(embed)
