@@ -3094,12 +3094,12 @@ client.on("message", async message => {
       return message.channel.send(`**>>> ${prefix}mute <@mention Or ID>**`);
     let mute = message.guild.roles.cache.find(
       role => role.name === "Muted",
-      "Muted By BlackSestam"
+      "Muted"
     );
     if (!mute)
       mute = await message.guild.roles.create({
         data: {
-          name: "Muted",
+          name: "Muted by zerobot",
           color: "#0000",
           permissions: []
         }
@@ -3154,7 +3154,7 @@ client.on("message", async message => {
       return message.channel.send(`**>>> ${prefix}unmute <@mention Or ID>**`);
     let mute = message.guild.roles.cache.find(
       role => role.name === "Muted",
-      "Muted By BlackSestam"
+      "Muted by zerobot"
     );
     message.guild.channels.cache.forEach(async channel => {
       await channel.createOverwrite(mute, {
@@ -3283,7 +3283,7 @@ client.on("message", async message => {
     if (!muterole) {
       try {
         muterole = await message.guild.roles.create({
-          name: "Muted",
+          name: "Muted by zerobot",
           color: "#000000",
           permissions: []
         });
@@ -3306,7 +3306,7 @@ client.on("message", async message => {
         `**  You Have Been Muted **`,
         `**Reason : Type everyone and here**`
       )
-      .setColor("c91616")
+      .setColor(col)
       .setThumbnail(`${message.author.avatarURL}`)
       .setAuthor(message.author.username, message.author.avatarURL())
       .setFooter(`${message.guild.name} `);
@@ -3345,7 +3345,7 @@ client.on("message", black => {
       .addField("**Roles:**", ` ${black.guild.roles.cache.size}`)
       .addField("AFK Timeout", black.guild.afkTimeout / 60 + ' minutes', true)
       .setFooter(`Requested | ${black.author.tag}`, black.author.avatarURL())
-      .setColor("RANDOM")
+      .setColor(col)
       .setTimestamp();
     black.channel.send(blackjack);
   }
@@ -3357,12 +3357,11 @@ client.on('message', message => {
   if(message.content.startsWith(`${prefix}support`)){
     var embed = new Discord.MessageEmbed()
     .setTitle("Click Here")
-    .setURL("https://discord.gg/h4hwjrhU5Q")
+    .setURL("https://discord.gg/mXKkvD9WuZ")
     .setTimestamp()
     .setFooter(`Requested By | ${message.author.username}`)
-    .setColor("RANDOM")
-    message.channel.send("**Check Your DM**")
-    message.author.send({embed})
+    .setColor(col)
+    message.channel.send({embed})
   }
 });
 client.on('message', message => {
@@ -3372,9 +3371,8 @@ client.on('message', message => {
     .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`)
     .setTimestamp()
     .setFooter(`Requested By | ${message.author.username}`)
-    .setColor("RANDOM")
-    message.channel.send("**Check Your DM**")
-    message.author.send({embed})
+    .setColor(col)
+    message.channel.send({embed})
   }
 });
 
@@ -3410,7 +3408,7 @@ client.on("message", message => {
       .addField("Servers", `\`${client.guilds.cache.size}\``)
       .addField("Users", `\`${client.users.cache.size}\``)
       .addField("Channels", `\`${client.channels.cache.size}\``)
-      .addField("Devs Bot", `\` <@670647563627659306>\``)
+      .addField("Devs Bot", `\` AREZ#1012 \``)
       .addField("Version", `\` Version 12.4.0\``)
       .addField("Ping Bot", `\`${msg}ms.\``)
       .addField("Api Bot", `\`${api}ms.\``)
