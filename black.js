@@ -29,7 +29,8 @@ const queue = new Map();
 const imdb = require("imdb-api");
 const cooldown = new Set();
 const cdtime = 5;
-const prefix = "b!"
+const prefix = "z!"
+const col = "#2C2F33"
 client.login("")
 client.on("ready", () => {
   console.log("ALLAH AKBAR");
@@ -37,7 +38,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ");
     console.log(client.guilds.cache.map(c => `${c.name} : ${c.me.hasPermission(8)} : ${c.memberCount}`));
-  client.user.setActivity( `${prefix}help | BLACK SESTAM VERSION 12.4.0 | SERVERS ${client.guilds.cache.size} | Users ${client.users.cache.size} `);
+  client.user.setActivity( `${prefix}help | Djs v14`);
   console.log(`Logined`);
 });
 
@@ -62,7 +63,7 @@ client.on("message", message => {
       .addField("Channel:", `${room}`)
       .addField("Server", `${message.guild.name}`)
       .addField("Requested By:", `${message.author}`)
-      .setColor("RANDOM")
+      .setColor(col)
       .setFooter(`${client.user.username}`)
       .setTimestamp();
     message.channel.send(embed);
@@ -201,7 +202,7 @@ client.on("message", message => {
       .addField("Channel:", `${room}`)
       .addField("Server", `${message.guild.name}`)
       .addField("Requested By:", `${message.author}`)
-      .setColor("RANDOM")
+      .setColor(col)
       .setFooter(`${client.user.username}`)
       .setTimestamp();
     message.channel.send(embed);
@@ -285,7 +286,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel Status', `${sug[message.guild.id].onoff}`,)
 .addField('Channel', `${sug[message.guild.id].channel}` || `None`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -316,7 +317,7 @@ client.on("message", message => {
       .addField("Channel:", `${room}`)
       .addField("Server", `${message.guild.name}`)
       .addField("Requested By:", `${message.author}`)
-      .setColor("RANDOM")
+      .setColor(col)
       .setFooter(`${client.user.username}`)
       .setTimestamp();
     message.channel.send(embed);
@@ -369,7 +370,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel:', `${room}`)
 .addField('Server', `${message.guild.name}`)
 .addField('Requested By:', `${message.author}`)
-.setColor("RANDOM")
+.setColor(col)
 .setFooter(`${client.user.username}`)
 .setTimestamp()
 message.channel.send(embed)
@@ -396,7 +397,7 @@ client.on("guildMemberRemove", async member => {
     .addField("Member id", ` ${member.user.id}`, true)
     .addField("Total Member", ` ${member.guild.memberCount}`, true)
     .addField("Server ", ` ${member.guild.name}`, true)
-    .setColor("RANDOM")
+    .setColor(col)
     .setFooter(`${client.user.username}`)
     .setTimestamp();
   channels.send(left);
@@ -408,7 +409,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel Status', `${left[message.guild.id].onoff}`,)
 .addField('Channel', `${left[message.guild.id].channel}`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -483,7 +484,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel', `${room}`)
 .addField('Server', `${message.guild.name}`)
 .addField('Requested By', `${message.author}`)
-.setColor("RANDOM")
+.setColor(col)
 .setFooter(`${client.user.username}`)
 .setTimestamp()
 message.channel.send(embed)
@@ -540,7 +541,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Channel Status', `${setxp[message.guild.id].onoff}`,)
 .addField('Channel', `${setxp[message.guild.id].channel}`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -611,8 +612,8 @@ client.on("message", async message => {
       .addField("Message", `${topic}`)
       .addField("Channel", message.channel.name)
       .addField("By", message.author.tag)
-      .setColor("RANDOM")
-      .setFooter("BY BLACK JACK");
+      .setColor(col)
+      .setFooter("");
     message.channel.send(embed);
   }
 });
@@ -623,7 +624,7 @@ client.on("message", message => {
     let tag = message.mentions.members.first();
     if(!tag) return ('**Aw kasa La server nya**')
     let args = message.content.split(" ").slice(1).join(" ")
-    if(!args) return message.reply('**Kasek Menition bka**')
+    if(!args) return message.reply('**Type User Menition**')
      if (!message.guild.member(tag).bannable) return message.reply("**I cant Ban Member Because The Member Hight role**");
     var blackjack = 'Black sestam'
     const ban = new Discord.MessageEmbed()
@@ -631,8 +632,8 @@ client.on("message", message => {
     .addField('Guild', message.guild.name)
     .addField('Name member ban', tag)
     .addField('Moderation', message.author.tag)
-    .setFooter('BLACK SESTAM')
-    .setColor("RANDOM")
+    .setFooter('')
+    .setColor(col)
     message.channel.send(ban)
     tag.ban();
   }})
@@ -654,8 +655,8 @@ client.on("message", message => {
       .addField("Guild", message.guild.name)
       .addField("Name member ban", tag)
       .addField("Moderation", message.author.tag)
-      .setFooter("BLACK SESTAM")
-      .setColor("RANDOM");
+      .setFooter("")
+      .setColor(col);
     message.channel.send(ban);
     tag.kick();
   }
@@ -670,7 +671,7 @@ client.on("message", async message => {
     const imob = new imdb.Client({ apiKey: "5e36f0db" }); //You need to paste you imdb api
     let movie = await imob.get({ name: args.join(" ") });
     let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor(col)
       .setTitle(movie.title)
       .setURL(movie.imdburl)
       .setDescription(movie.plot)
@@ -764,7 +765,7 @@ client.on('message', async message => {
 const reply2 = JSON.parse(fs.readFileSync('./replys2.json' , 'utf8'));
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
-   if(message.content ===  'b!setReponse2') {
+   if(message.content ===  'z!setReponse2') {
         
     let filter = m => m.author.id === message.author.id;
     let thisMessage;
@@ -943,7 +944,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Message', `${reply2[message.guild.id].msg}` || `None`)
 .addField('Message', `${reply2[message.guild.id].reply}` || `None`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -956,7 +957,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Message', `${reply[message.guild.id].msg}` || `None`)
 .addField('Message', `${reply[message.guild.id].reply}` || `None`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -1094,7 +1095,7 @@ let embed = new Discord.MessageEmbed()
 .addField('Message', `${reply3[message.guild.id].msg}` || `None`)
 .addField('Message', `${reply3[message.guild.id].reply}` || `None`)
 .addField('Requested By', `${message.author.username}`)
-.setColor("#00FFFF")
+.setColor(col)
 .setThumbnail(message.author.avatarURL())
 .setFooter(`${client.user.username}`)
 message.channel.send(embed)
@@ -1116,17 +1117,17 @@ client.on("message", async message => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
     let help = new Discord.MessageEmbed()
-      .setColor("RED")
+      .setColor(col)
       .setAuthor(message.author.username, message.author.displayAvatarURL())
       .setThumbnail(message.guild.iconURL()).setDescription(`
       
 [Click To Invite](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975)  
 
-**The Prefix is a (b!)**
+**The Prefix is a (z!)**
 
 **General**
  botinfo,server,ping,invites,boosts,hightRole,nick,user,avatar,roles,emoji,sug,timer,youtube,google,weather,listemojis,my perms,
- covid,my perms,sbot,calc,chinfo,count,guild,date,year,se static <emojiserver>,movie <movie name>
+covid,my perms,sbot,calc,chinfo,count,guild,date,year,se static <emojiserver>,movie <movie name>
 
 **Moderation**
 ban,kick,mute,unmute,say,embed,tempmute,color,bans,roleinf
@@ -1140,7 +1141,7 @@ toggleLevel [on/off],toggleLeave [on/off],autoreply1 [on/off],autoreply2 [on/off
 
 
  **Security**
-  anti ban [Number]
+anti ban [Number]
  anti kick [Number]
  anti channelD [Number]
  anti channelC [Number]
@@ -1159,7 +1160,7 @@ slots,rps,8ball
  meme,slap,cuddle,kiss,boom,man,girl
  sad,love,hack,dog
 
-[Support Server](https://discord.gg/zqgxs7RJpQ) 
+[Support Server](https://discord.gg/mXKkvD9WuZ) 
 
 `);
     message.channel.send(help);
